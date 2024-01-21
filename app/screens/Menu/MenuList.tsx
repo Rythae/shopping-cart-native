@@ -1,5 +1,6 @@
 import React from "react";
-import { Text, Image, ImageBackground, View, StyleSheet, TouchableOpacity, FlatList, ScrollView } from "react-native";
+import { Text, Image, Pressable,ImageBackground, View, StyleSheet, TouchableOpacity, FlatList, ScrollView } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 
 interface MenuItem {
@@ -15,7 +16,12 @@ interface MenuItem {
   
   
   const MenuList: React.FC<MenuListProps> = ({ menu }) => {
-	
+	const navigation = useNavigation<any>();
+
+    const handleCardPress = () => {
+        navigation.navigate("MenuDetailScreen");
+      };
+
     return (
         <View>
             <ScrollView>
@@ -25,7 +31,7 @@ interface MenuItem {
                         showsHorizontalScrollIndicator={false}
                         renderItem={({ item }) => (
                         <>
-                        <View style={styles.menuCards}> 
+                        <TouchableOpacity style={styles.menuCards} onPress={handleCardPress}>
                             <View style={{ flexDirection: 'row', justifyContent: 'flex-end', paddingVertical: 5, width: 150 }}>
                             <Image source={require("../../assets/heart.png")} />
                             </View>
@@ -48,10 +54,11 @@ interface MenuItem {
                             </View>
                             <Text style={styles.buttonText}>Add to Cart</Text>
                             </TouchableOpacity>
-                        </View>
+                        </TouchableOpacity>
                         </>
                         )}
                         horizontal={false}
+                        contentContainerStyle={styles.listContainer}
                     />
                 </View>
             </ScrollView>
@@ -62,11 +69,7 @@ interface MenuItem {
 
 const styles = StyleSheet.create({
     container: {
-        padding: 16,
-        flexDirection: 'row', 
-        flexWrap: 'wrap', 
-        justifyContent: 'space-between', 
-        width: "100%"
+      flex: 1
     },
     productDetails: {
         flexDirection: 'row',
@@ -76,7 +79,7 @@ const styles = StyleSheet.create({
         backgroundColor: "white",
         justifyContent: "center",
         alignItems: "center",
-        width: 180,
+        width: 190,
         height: 180,
         marginBottom: 18
     },
@@ -89,7 +92,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "center",
-        width: 150,
+        width: 130,
         borderRadius: 100,
         marginVertical: 15
     },
@@ -113,8 +116,17 @@ const styles = StyleSheet.create({
     },
     redText: {
         fontSize: 10,
-        paddingLeft: 12,
-        color: "#DB3C25"
+        paddingLeft: 15,
+        color: "#DB3C25",
+        fontWeight: "500"
+    },
+    listContainer: {
+        flexDirection: 'row', 
+        flexWrap: 'wrap', 
+        justifyContent: 'space-between', 
+        alignItems: "center",
+        width: "100%",
+        paddingVertical: 25
     }
 });
 

@@ -15,31 +15,31 @@ const Menu = () => {
         {
 			id: 2,
             productImage: require("../../assets/menuImage.png"),
-            productName: "African Doughnut Mix<",
+            productName: "Efo Riro<",
             productPrice: "£30",
 		},
         {
 			id: 3,
             productImage: require("../../assets/menuImage.png"),
-            productName: "African Doughnut Mix<",
+            productName: "Asaro (Yam Porridge)<",
             productPrice: "£30",
 		},
         {
 			id: 4,
             productImage: require("../../assets/menuImage.png"),
-            productName: "African Doughnut Mix<",
+            productName: "Chicken Stew<",
             productPrice: "£30",
 		},
         {
 			id: 6,
             productImage: require("../../assets/menuImage.png"),
-            productName: "African Doughnut Mix<",
+            productName: "Asaro (Yam Porridge)<",
             productPrice: "£30",
 		},
         {
 			id: 6,
             productImage: require("../../assets/menuImage.png"),
-            productName: "African Doughnut Mix<",
+            productName: "Asaro (Yam Porridge)<",
             productPrice: "£30",
 		},
     ]
