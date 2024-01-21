@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, ImageBackground } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { HeaderBackButton } from "@react-navigation/stack";
 
@@ -8,7 +8,14 @@ const MenuDetailScreen = () => {
     const navigation = useNavigation<any>();
 	return (
         <View style={styles.container}>
-            <Text>MenuDetail Screen</Text>
+           <View style={{ backgroundColor: "#ffffff"}}>
+            <ImageBackground
+                source={require("../../assets/menuImage.png")}
+                resizeMode="cover"
+                style={styles.imageBackground}
+                >
+            </ImageBackground>
+           </View>
         </View>
 	);
 }
@@ -16,8 +23,16 @@ const MenuDetailScreen = () => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        padding: 30,
+        backgroundColor: "fff"
       },
+      imageBackground: {
+        width: 200,
+        height: 200
+      }
 });
 
 MenuDetailScreen.navigationOptions = ({ navigation }) => ({
