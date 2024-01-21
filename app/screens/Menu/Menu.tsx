@@ -54,7 +54,7 @@ const Menu = () => {
                     placeholderTextColor="#858585"
                 />
             </View>
-             <MenuList menu={menuItems} />
+              <MenuList menu={menuItems} />
         </View>
      );
 }

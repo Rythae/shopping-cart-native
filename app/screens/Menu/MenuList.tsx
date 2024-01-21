@@ -26,8 +26,8 @@ interface MenuItem {
                         renderItem={({ item }) => (
                         <>
                         <View style={styles.menuCards}> 
-                            <View style={{ flexDirection: 'row', justifyContent: 'flex-end', paddingVertical: 5 }}>
-                            {/* <Image source={require("../../assets/heart.png")} /> */}
+                            <View style={{ flexDirection: 'row', justifyContent: 'flex-end', paddingVertical: 5, width: 150 }}>
+                            <Image source={require("../../assets/heart.png")} />
                             </View>
                             <ImageBackground
                                 source={item.productImage}
@@ -62,7 +62,6 @@ interface MenuItem {
 
 const styles = StyleSheet.create({
     container: {
-        // flex: 1,
         padding: 16,
         flexDirection: 'row', 
         flexWrap: 'wrap', 
@@ -77,13 +76,13 @@ const styles = StyleSheet.create({
         backgroundColor: "white",
         justifyContent: "center",
         alignItems: "center",
-        width: 200,
-        height: 228,
+        width: 180,
+        height: 180,
         marginBottom: 18
     },
     image: {
-        width: 80,
-        height: 80,
+        width: 50,
+        height: 50,
     },
     buttonContainer: {
         backgroundColor: "#DB3C25",
@@ -96,7 +95,7 @@ const styles = StyleSheet.create({
     },
     buttonText: {
         color: "white",
-        fontSize: 16,
+        fontSize: 12,
         fontWeight: "bold",
         marginRight: 8,
     },
@@ -105,15 +104,15 @@ const styles = StyleSheet.create({
         padding: 8,
     },
     cartIcon: {
-        width: 24,
-        height: 24,
+        width: 18,
+        height: 18,
         tintColor: "white", 
     },
     textSize: {
-        fontSize: 14,
+        fontSize: 12,
     },
     redText: {
-        fontSize: 12,
+        fontSize: 10,
         paddingLeft: 12,
         color: "#DB3C25"
     }
